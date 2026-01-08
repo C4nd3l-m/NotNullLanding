@@ -1,0 +1,27 @@
+{
+  "name": "not-null-landing",
+  "version": "1.0.0",
+  "description": "> **Your brand, not null.**",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C4nd3l-m/NotNullLanding.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/C4nd3l-m/NotNullLanding/issues"
+  },
+  "homepage": "https://github.com/C4nd3l-m/NotNullLanding#readme",
+  "devDependencies": {
+    "vite": "^7.3.1",
+    "vite-plugin-html-inject": "^1.1.2"
+  }
+}
