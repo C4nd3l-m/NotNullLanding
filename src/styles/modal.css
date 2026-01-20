@@ -1,0 +1,189 @@
+/* Modal Styles */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--color-base-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-lg);
+  max-width: 500px;
+  width: 90%;
+  z-index: 1001;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--color-neutral);
+  transition: color var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: var(--color-accent-1);
+}
+
+.modal-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.modal-title {
+  font-size: 2rem;
+  color: var(--color-base-light);
+  margin-bottom: var(--spacing-xs);
+}
+
+.modal-subtitle {
+  color: var(--color-neutral);
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-option::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-accent-1), var(--color-accent-2));
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform var(--transition-normal);
+}
+
+.contact-option:hover::before {
+  transform: scaleY(1);
+}
+
+.contact-option:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-accent-1);
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 255, 163, 0.1);
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+}
+
+.contact-option:hover .contact-icon {
+  background-color: rgba(0, 255, 163, 0.2);
+  transform: scale(1.1);
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-accent-1);
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h4 {
+  color: var(--color-base-light);
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-primary);
+}
+
+.contact-info p {
+  color: var(--color-neutral);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.contact-arrow {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--transition-normal);
+}
+
+.contact-option:hover .contact-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-arrow svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--color-accent-2);
+}

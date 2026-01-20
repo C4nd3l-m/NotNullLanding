@@ -1,0 +1,41 @@
+/* Process Section Styles */
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.process-step {
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-sm);
+  background: rgba(255,255,255,0.02);
+  border-radius: 4px;
+  text-align: center;
+  transition: transform var(--transition-normal);
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.04);
+}
+
+.step-number {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.594);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.step-title {
+  color: var(--color-accent-1);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.step-description {
+  color: var(--color-neutral);
+  font-size: 0.95rem;
+}

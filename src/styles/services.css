@@ -1,0 +1,129 @@
+/* Services Section Styles */
+
+.services {
+  background-color: var(--color-base-dark);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+  color: var(--color-base-light);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-title, .service-description, .service-list, .service-meta, .service-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.service-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background: var(--accent-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--spacing-sm);
+  stroke: var(--color-accent-1);
+  transition: all var(--transition-normal);
+}
+
+.service-card:hover .service-icon {
+  stroke: var(--color-accent-2);
+  transform: scale(1.1);
+}
+
+.service-description {
+  color: var(--color-neutral);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.service-list {
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.service-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.service-meta {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}

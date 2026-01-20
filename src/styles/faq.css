@@ -1,0 +1,25 @@
+/* FAQ Section Styles */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.02);
+  padding: var(--spacing-md);
+  border-radius: 4px;
+  border-left: 2px solid var(--color-accent-2);
+}
+
+.faq-item h4 {
+  color: var(--color-base-light);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}

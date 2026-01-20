@@ -9,12 +9,22 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
   <!-- Styles -->
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <div id="vanta-bg"></div>
+  <div class="scroll-progress"></div>
+  <div class="bg-glow">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+  </div>
   
   <!-- HERO SECTION -->
   <load src="./sections/hero.html" />
@@ -38,8 +48,6 @@
 
   <!-- FEATURES SECTION -->
   <load src="./sections/features.html" />
-
-  <div class="section-divider"></div>
 
   <!-- TECHNOLOGIES SECTION -->
   <load src="./sections/technologies.html" />
