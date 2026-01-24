@@ -1,24 +1,45 @@
 // NOT NULL - Interactive Behaviors
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Initialize Vanta Waves Background
-    if (typeof VANTA !== 'undefined') {
-        const vantaEffect = VANTA.WAVES({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x0d1a1a, // A deep emerald-tinted grey
-            shininess: 50.00,
-            waveHeight: 20.00,
-            waveSpeed: 0.80,
-            zoom: 0.90
+    // 0. Initialize Vanta Waves Background (Dynamic Loading)
+    const initVanta = () => {
+        if (typeof VANTA !== 'undefined') {
+            VANTA.WAVES({
+                el: "#vanta-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x0d1a1a, // A deep emerald-tinted grey
+                shininess: 50.00,
+                waveHeight: 20.00,
+                waveSpeed: 0.80,
+                zoom: 0.90
+            });
+        }
+    };
+
+    const loadScript = (src) => {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
         });
-    }
+    };
+
+    // Load Three.js first, then Vanta Waves
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js')
+        .then(() => loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js'))
+        .then(() => {
+            initVanta();
+        })
+        .catch(err => console.error('Failed to load Vanta scripts:', err));
 
     // 1. Scroll Progress Bar
     const progressBar = document.querySelector('.scroll-progress');
